@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #ffffff;
+            color: #3a3a3a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 420px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 1px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+            margin-bottom: 60px;
+            border: 14px solid #ffffff;
+            filter: brightness(1.02) contrast(1.05);
+        }
+
+        h1 {
+            font-family: 'Allura', cursive;
+            font-size: 4.5rem;
+            color: #c9a19c;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #7a7a7a;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 120px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            background-color: #fafafa;
+        }
+
+        .letter-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 70px 80px;
+            box-shadow: 0 8px 35px rgba(0,0,0,0.08);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .letter-header h2 {
+            font-family: 'Allura', cursive;
+            font-size: 3rem;
+            color: #b89a95;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .letter-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .letter-body {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #4a4a4a;
+            text-align: justify;
+        }
+
+        .letter-body p {
+            margin-bottom: 30px;
+        }
+
+        .letter-closing {
+            margin-top: 50px;
+            text-align: right;
+        }
+
+        .letter-signature {
+            font-family: 'Allura', cursive;
+            font-size: 2.5rem;
+            color: #b89a95;
+            margin-top: 20px;
+        }
+
+        /* Moments Gallery */
+        .moments {
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #b89a95;
+            font-family: 'Allura', cursive;
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .gallery {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 10px solid white;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            filter: brightness(1.02) contrast(1.05);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Why I Love You */
+        .why-love {
+            background: #fafafa;
+        }
+
+        .reasons-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reason-item {
+            background: white;
+            padding: 40px 50px;
+            margin-bottom: 20px;
+            border-left: 3px solid #e8d5d5;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reason-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .reason-item h3 {
+            font-size: 1.4rem;
+            color: #a88f8a;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .reason-item p {
+            font-size: 1.15rem;
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+
+        /* Closing Section */
+        .closing {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 120px 20px;
+        }
+
+        .closing-content {
+            text-align: center;
+            max-width: 650px;
+        }
+
+        .closing-image {
+            width: 100%;
+            max-width: 450px;
+            height: 550px;
+            object-fit: cover;
+            border: 16px solid white;
+            box-shadow: 0 18px 55px rgba(0,0,0,0.12);
+            margin-bottom: 60px;
+            filter: brightness(1.02) contrast(1.05);
+        }
+
+        .closing-text {
+            font-family: 'Allura', cursive;
+            font-size: 2.8rem;
+            color: #b89a95;
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .closing-note {
+            font-size: 1.1rem;
+            color: #7a7a7a;
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #d4c4c4;
+            margin: 40px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .letter-wrapper {
+                padding: 50px 35px;
+            }
+
+            .letter-header h2 {
+                font-size: 2.3rem;
+            }
+
+            .letter-body {
+                font-size: 1.1rem;
+                text-align: left;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .reasons-container {
+                padding: 0 20px;
+            }
+
+            .reason-item {
+                padding: 30px 30px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+            }
+
+            .closing-text {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 161, 156, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 161, 156, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="WhatsApp Image 2026-02-11 at 04.55.01.jpeg" alt="Couple Photo" class="hero-image">
+            <h1>Happy Valentine's Day</h1>
+            <p class="hero-subtitle">This little corner of the internet is just for you</p>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="love-letter">
+        <div class="container">
+            <div class="letter-wrapper">
+                <div class="letter-header">
+                    <h2>To You</h2>
+                    <p class="letter-date">February 14, 2026</p>
+                </div>
+                <div class="letter-body">
+                    <p>Aku nggak pernah terlalu pandai untuk mengungkapkan perasaan lewat kata-kata. Tapi hari ini, aku ingin kamu tahu seberapa berarti kamu bagiku.</p>
+                    
+                    <p>Sejak kamu ada, hidup terasa lebih ringan. Kamu mengajariku bahwa kebahagiaan itu sederhana—cukup dengan tertawa bareng, jalan tanpa tujuan, atau diam-diaman yang nyaman. Aku nggak butuh hal yang luar biasa kalau bersamamu.</p>
+                    
+                    <p>Terima kasih sudah jadi tempat pulang yang paling kurindukan. Terima kasih sudah menerima aku apa adanya, dengan semua kekurangan yang aku punya.</p>
+                    
+                    <p>Aku beruntung punya kamu.</p>
+                </div>
+                <div class="letter-closing">
+                    <div class="divider"></div>
+                    <p class="letter-signature">Always Yours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moments Gallery -->
+    <section class="moments">
+        <div class="container">
+            <h2 class="section-title">Our Moments</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-02-11 at 04.54.54.jpeg" alt="Moment 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-02-11 at 04.54.55.jpeg" alt="Moment 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="momen 1.jpeg" alt="Moment 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="momen2.jpeg" alt="Moment 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-02-11 at 04.54.53.jpeg" alt="Moment 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-02-11 at 05.12.49.jpeg" alt="Moment 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why I Love You -->
+    <section class="why-love">
+        <div class="container">
+            <h2 class="section-title">Why I Love You</h2>
+            <div class="reasons-container">
+                <div class="reason-item">
+                    <h3>Your Presence</h3>
+                    <p>Kamu punya cara untuk membuat segalanya terasa lebih baik. Bahkan di hari terburuk sekalipun, kehadiranmu selalu jadi obat.</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Your Laugh</h3>
+                    <p>Tawa kamu adalah suara favorit yang nggak pernah aku bosan dengarkan. Itu bikin semuanya terasa lebih hidup.</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Your Kindness</h3>
+                    <p>Cara kamu peduli sama orang lain, bahkan hal-hal kecil yang kadang luput dari perhatian, itu bikin aku makin yakin kalau kamu istimewa.</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Your Understanding</h3>
+                    <p>Kamu ngerti aku tanpa perlu banyak kata. Dan itu sesuatu yang nggak pernah aku temukan di orang lain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing">
+        <div class="closing-content">
+            <img src="WhatsApp Image 2026-02-11 at 05.13.35.jpeg" alt="Final Couple Photo" class="closing-image">
+            <p class="closing-text">Every day with you feels like Valentine</p>
+            <div class="divider"></div>
+            <p class="closing-note">Thank you for being my home</p>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Subtle parallax for hero
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroImage = document.querySelector('.hero-image');
+                    if (heroImage && scrolled < window.innerHeight) {
+                        heroImage.style.transform = `translateY(${scrolled * 0.25}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
